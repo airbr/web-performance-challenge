@@ -50,11 +50,11 @@ const cookieLayerInit = () => {
     methods: {
       acceptCookies() {
         this.displayCookieBox = false;
-        document.body.classList.remove('no-scroll');
+        // document.body.classList.remove('no-scroll');
       }
     },
     mounted() {
-      document.body.classList.add('no-scroll');
+      // document.body.classList.add('no-scroll');
     }
   });
 };
