@@ -13,11 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
   <!-- <script src="https://slowfil.es/file?type=js&delay=2000"></script> -->
   <!-- <script async defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-  <script src="https://v2.vuejs.org/js/vue.min.js"></script>
+  <script src="https://v2.vuejs.org/js/vue.min.js" defer></script>
   <!-- <script src="https://unpkg.com/vuex"></script> -->
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
   <!-- <script async defer src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js'></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script> -->
   <title>The Rum Diary</title>
@@ -93,7 +93,7 @@
           </div>
           <div class="swiper-text">Local restaurants finally optimising time to first bite</div>
         </a>
-        <script src="script/carousel.js"></script>
+        <script src="script/carousel.js" defer></script>
         
         <a class="hero__teaser div2" href="fake-link.html" aria-label="Top 10 waterfalls to analyse this week">
           <img 
@@ -194,8 +194,8 @@
       <div class="footer__sponsor">Powered by <a href="https://www.netcentric.biz/" class="footer__link">Cognizant Netcentric</a></div>
     </div>
   </footer>
-  <script src="script/app.js"></script>
-  <script src="script/a11y.js"></script>
+  <script src="script/app.js" defer></script>
+  <script src="script/a11y.js" defer></script>
   <!-- <script>
     // Adobe Target pre-hiding code snippet 
     ;(function(win, doc, style, timeout) {
@@ -235,9 +235,13 @@
         removeStyle(getParent(), STYLE_ID);
       }, timeout);
     }(window, document, "body {opacity: 0 !important}", 3000));
-  </script> -->
+  </script> 
+
+  // This seeemed to be for an intentional FOUC or white flash, and did nothing else. 
+  -->
   <script>
     // advertisment mock
+    // I put this inline into the HTML, but it's here for reference. Not sure about limitations
     const initAd = () => {
       const adSpace = document.querySelector('.main__advertising');
       const gif = '<div style="width:400px;max-width:100%;"><div style="height:0;padding-bottom:52.4%;position:relative;"><iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe></div></div>';
@@ -252,7 +256,7 @@
     //   }
     // };
 
-    // async CSS - is bad for you generally. 
+    // async CSS - is bad for you generally. Put that in the head if not inline it
     // function loadMobileCSS() {
     //   $('head').append(`<link rel="stylesheet" type="text/css" href="styles/mobile.css">`);
     // };
